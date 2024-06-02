@@ -1,0 +1,16 @@
+<div *ngIf="profile">
+  <h2>Profile</h2>
+  <img [src]="profile.photo" alt="Avatar" class="avatar">
+  <p><strong>First Name:</strong> {{ profile.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ profile.lastName }}</p>
+  <p><strong>Email:</strong> {{ profile.email }}</p>
+  <p><strong>Phone:</strong> {{ profile.phone }}</p>
+  <p><strong>Age:</strong> {{ profile.age }}</p>
+  <p><strong>State:</strong> {{ profile.state }}</p>
+  <p><strong>Country:</strong> {{ profile.country }}</p>
+  <p *ngIf="profile.addressType === 'home'"><strong>Address:</strong> {{ profile.address1 }}, {{ profile.address2 }}</p>
+  <p *ngIf="profile.addressType === 'company'"><strong>Company Address:</strong> {{ profile.companyAddress1 }}, {{ profile.companyAddress2 }}</p>
+  <p><strong>Tags:</strong> {{ profile.tags }}</p>
+  <p><strong>Newsletter:</strong> {{ profile.newsletter ? 'Yes' : 'No' }}</p>
+  <button (click)="editProfile()">Edit Profile</button>
+</div>
